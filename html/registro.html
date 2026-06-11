@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Bugle - Registro</title>
+  <meta name="description" content="Regístrate en el Daily Bugle y recibe las últimas noticias de Nueva York en tu correo.">
+  <link rel="icon" type="image/svg+xml" href="../img/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Roboto+Slab:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-pagina="registro">
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+  <div id="header-slot"></div>
+
+  
+
+    <section class="form-section form-section-small">
+      <div class="section-header scroll-animate">
+        <span class="section-line" aria-hidden="true"></span>
+        <h2>Únete al Bugle</h2>
+        <span class="section-line" aria-hidden="true"></span>
+      </div>
+
+      <p class="form-intro">Crea tu cuenta y accede a contenido exclusivo, comentarios en las noticias y alertas en tiempo real.</p>
+
+      <form class="form-noticia" id="form-registro" novalidate>
+        <div class="form-grupo">
+          <label for="reg-nombre">Nombre completo *</label>
+          <input type="text" id="reg-nombre" name="nombre" required minlength="3" aria-required="true">
+          <span class="form-error" id="error-reg-nombre" aria-live="polite"></span>
+        </div>
+
+        <div class="form-grupo">
+          <label for="reg-email">Correo electrónico *</label>
+          <input type="email" id="reg-email" name="email" required aria-required="true">
+          <span class="form-error" id="error-reg-email" aria-live="polite"></span>
+        </div>
+
+        <div class="form-grupo">
+          <label for="reg-usuario">Nombre de usuario *</label>
+          <input type="text" id="reg-usuario" name="usuario" required minlength="4" pattern="[a-zA-Z0-9_]+" aria-required="true">
+          <span class="form-hint">Solo letras, números y guión bajo.</span>
+          <span class="form-error" id="error-reg-usuario" aria-live="polite"></span>
+        </div>
+
+        <div class="form-grupo">
+          <label for="reg-password">Contraseña *</label>
+          <input type="password" id="reg-password" name="password" required minlength="8" aria-required="true">
+          <span class="form-hint">Mínimo 8 caracteres.</span>
+          <span class="form-error" id="error-reg-password" aria-live="polite"></span>
+        </div>
+
+        <div class="form-grupo">
+          <label for="reg-password2">Confirmar contraseña *</label>
+          <input type="password" id="reg-password2" name="password2" required aria-required="true">
+          <span class="form-error" id="error-reg-password2" aria-live="polite"></span>
+        </div>
+
+        <div class="form-grupo form-checkbox">
+          <input type="checkbox" id="reg-terminos" name="terminos" required aria-required="true">
+          <label for="reg-terminos">Acepto los términos y condiciones *</label>
+        </div>
+
+        <div class="form-grupo form-checkbox">
+          <input type="checkbox" id="reg-newsletter" name="newsletter">
+          <label for="reg-newsletter">Quiero recibir el boletín diario del Bugle</label>
+        </div>
+
+        <button type="submit" class="form-boton">Crear cuenta</button>
+
+        <p class="form-login">¿Ya tienes cuenta? <a href="#">Inicia sesión</a></p>
+
+        <div class="form-exito" id="form-exito-reg" role="status" aria-live="polite" hidden>
+          ¡Cuenta creada con éxito! Bienvenido al Daily Bugle.
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <div id="footer-slot"></div>
+
+  <script src="../js/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('form-registro');
+      const exito = document.getElementById('form-exito-reg');
+
+      function mostrarError(id, mensaje) {
+        const el = document.getElementById(id);
+        if (el) el.textContent = mensaje;
+      }
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let valido = true;
+
+        const nombre = document.getElementById('reg-nombre');
+        const email = document.getElementById('reg-email');
+        const usuario = document.getElementById('reg-usuario');
+        const pass = document.getElementById('reg-password');
+        const pass2 = document.getElementById('reg-password2');
+        const terminos = document.getElementById('reg-terminos');
+
+        ['error-reg-nombre', 'error-reg-email', 'error-reg-usuario',
+         'error-reg-password', 'error-reg-password2'].forEach(id => mostrarError(id, ''));
+
+        if (nombre.value.trim().length < 3) {
+          mostrarError('error-reg-nombre', 'El nombre debe tener al menos 3 caracteres.');
+          valido = false;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email.value)) {
+          mostrarError('error-reg-email', 'Ingresa un correo válido.');
+          valido = false;
+        }
+
+        if (!/^[a-zA-Z0-9_]+$/.test(usuario.value) || usuario.value.length < 4) {
+          mostrarError('error-reg-usuario', 'Mínimo 4 caracteres, solo letras, números y _');
+          valido = false;
+        }
+
+        if (pass.value.length < 8) {
+          mostrarError('error-reg-password', 'La contraseña debe tener mínimo 8 caracteres.');
+          valido = false;
+        }
+
+        if (pass.value !== pass2.value) {
+          mostrarError('error-reg-password2', 'Las contraseñas no coinciden.');
+          valido = false;
+        }
+
+        if (!terminos.checked) {
+          alert('Debes aceptar los términos y condiciones.');
+          valido = false;
+        }
+
+        if (valido) {
+          exito.hidden = false;
+          form.reset();
+          exito.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

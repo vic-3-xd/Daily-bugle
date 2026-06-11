@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Bugle - El Periódico de Nueva York</title>
+  <meta name="description" content="El Daily Bugle: La verdad sobre Spider-Man, sus villanos y los superhéroes de Nueva York. Noticias, reportajes e investigaciones exclusivas.">
+  <meta name="keywords" content="Daily Bugle, Spider-Man, Duende Verde, Venom, Doctor Octopus, Hombre de Arena, Lagarto, Electro, Escorpión">
+  <meta name="author" content="Daily Bugle">
+  <meta property="og:title" content="Daily Bugle - El Periódico de Nueva York">
+  <meta property="og:description" content="La verdad sobre los superhéroes de Nueva York">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="../img/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Roboto+Slab:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-pagina="inicio">
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+  <div id="header-slot"></div>
+
+  <main id="contenido">
+    <section class="hero scroll-animate" aria-labelledby="hero-titulo">
+      <div class="hero-overlay">
+        <h2 id="hero-titulo">¿Buscas información sobre Spider-Man?</h2>
+        <form class="search-bar" role="search" onsubmit="event.preventDefault(); document.getElementById('btn-buscar').click();">
+          <label for="buscador" class="sr-only">Buscar noticias</label>
+          <input type="search" id="buscador" placeholder="Buscar: Spider-Man, Duende Verde, Venom..." autocomplete="off">
+          <button type="button" id="btn-buscar" aria-label="Buscar">Buscar</button>
+        </form>
+        <div id="resultados-busqueda" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="featured" aria-labelledby="portada-titulo">
+      <div class="section-header scroll-animate">
+        <span class="section-line" aria-hidden="true"></span>
+        <h2 id="portada-titulo">Portada de Hoy</h2>
+        <span class="section-line" aria-hidden="true"></span>
+      </div>
+
+      <a class="headline-card" href="noticia.html?id=spiderman-vs-buitre">
+        <div class="headline-badge">¡EXCLUSIVA MUNDIAL!</div>
+        <h3>Spider-Man: ¿Héroe o Amenaza?</h3>
+        <p>El alcalde Wilson Fisk ofrece 10 millones de dólares por información que lleve a la captura del enmascarado. Mientras tanto, nuevos testigos afirman haberlo visto luchando contra una criatura de arena en el puerto.</p>
+        <div class="headline-footer">
+          <span>Por J. Jonah Jameson</span>
+          <span>📸 Fotos exclusivas en página 3</span>
+        </div>
+      </a>
+
+      <div class="section-header scroll-animate" style="margin-top: 50px;">
+        <span class="section-line" aria-hidden="true"></span>
+        <h2>Últimos Reportes</h2>
+        <span class="section-line" aria-hidden="true"></span>
+      </div>
+
+      <div class="game-cards" id="reportes-container">
+        <!-- Se llena con JS -->
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-slot"></div>
+
+  <script src="../js/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const reportes = NOTICIAS.slice(1, 5);
+      const cont = document.getElementById('reportes-container');
+      cont.innerHTML = reportes.map(renderReportesCard).join('');
+      animarCards('reportes-container');
+      setupTilt('#reportes-container .card');
+      setupBuscador('buscador', 'resultados-busqueda', 'index.html');
+      setupTypewriter('buscador', [
+        'Spider-Man...',
+        'Duende Verde...',
+        'Venom...',
+        'Doctor Octopus...',
+        'Hombre de Arena...'
+      ]);
+    });
+  </script>
+</body>
+</html>

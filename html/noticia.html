@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Bugle - Noticia</title>
+  <link rel="icon" type="image/svg+xml" href="../img/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Roboto+Slab:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-pagina="noticias">
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+  <div id="header-slot"></div>
+
+  <main id="contenido">
+    <nav aria-label="Ruta de navegación" class="breadcrumbs" id="breadcrumbs">
+      <!-- Se llena con JS -->
+    </nav>
+
+    <article class="noticia-detalle" id="noticia-detalle">
+      <!-- Se llena con JS -->
+    </article>
+
+    <section class="news-section">
+      <div class="section-header scroll-animate">
+        <span class="section-line" aria-hidden="true"></span>
+        <h2>Noticias Relacionadas</h2>
+        <span class="section-line" aria-hidden="true"></span>
+      </div>
+      <div class="news-grid" id="relacionadas"></div>
+    </section>
+  </main>
+
+  <div id="footer-slot"></div>
+
+  <script src="../js/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const id = getQueryParam('id');
+      const noticia = NOTICIAS.find(n => n.id === id) || NOTICIAS[0];
+
+      document.getElementById('breadcrumbs').innerHTML = `
+        <a href="index.html">Inicio</a>
+        <span aria-hidden="true">›</span>
+        <a href="noticias.html">Noticias</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">${noticia.titulo.substring(0, 40)}...</span>
+      `;
+
+      document.title = `Daily Bugle - ${noticia.titulo}`;
+
+      document.getElementById('noticia-detalle').innerHTML = `
+        <div class="noticia-villano"><img src="${noticia.img}" alt="${noticia.titulo}" onerror="this.outerHTML='<div class=\\'img-fallback\\'>📰</div>'"></div>
+        <span class="news-tag">${noticia.tag}</span>
+        <h1>${noticia.titulo}</h1>
+        <div class="noticia-meta">
+          <span>📅 ${noticia.fecha}</span>
+          <span>✍️ Por ${noticia.autor}</span>
+        </div>
+        <p class="noticia-contenido">${noticia.contenido}</p>
+        <p class="noticia-contenido">${noticia.contenido}</p>
+        <p class="noticia-contenido">${noticia.contenido}</p>
+        <div class="noticia-acciones">
+          <a href="noticias.html" class="btn-volver">← Volver a noticias</a>
+        </div>
+      `;
+
+      const relacionadas = NOTICIAS.filter(n => n.id !== noticia.id).slice(0, 3);
+      document.getElementById('relacionadas').innerHTML =
+        relacionadas.map(renderNoticiaCard).join('');
+      animarCards('relacionadas');
+      setupTilt('#relacionadas .news-card');
+    });
+  </script>
+</body>
+</html>
