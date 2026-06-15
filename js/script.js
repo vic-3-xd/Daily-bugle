@@ -127,7 +127,7 @@ function renderHeader(paginaActiva) {
     </div>
     <div class="masthead">
       <div class="masthead-left">
-        <a href="index.html" aria-label="Ir al inicio" class="logo-link">
+        <a href="/index.html" aria-label="Ir al inicio" class="logo-link">
           <img src="../img/logo.svg" alt="Daily Bugle Logo" class="logo-img">
         </a>
         <div class="masthead-info">
@@ -145,10 +145,10 @@ function renderHeader(paginaActiva) {
       </div>
     </div>
     <nav aria-label="Navegación principal">
-      <a href="index.html"${paginaActiva === 'inicio' ? ' class="active" aria-current="page"' : ''}>Inicio</a>
-      <a href="noticias.html"${paginaActiva === 'noticias' ? ' class="active" aria-current="page"' : ''}>Noticias</a>
-      <a href="contacto.html"${paginaActiva === 'contacto' ? ' class="active" aria-current="page"' : ''}>Contacto</a>
-      <a href="registro.html"${paginaActiva === 'registro' ? ' class="active" aria-current="page"' : ''}>Registro</a>
+      <a href="/index.html"${paginaActiva === 'inicio' ? ' class="active" aria-current="page"' : ''}>Inicio</a>
+      <a href="/html/noticias.html"${paginaActiva === 'noticias' ? ' class="active" aria-current="page"' : ''}>Noticias</a>
+      <a href="/html/contacto.html"${paginaActiva === 'contacto' ? ' class="active" aria-current="page"' : ''}>Contacto</a>
+      <a href="/html/registro.html"${paginaActiva === 'registro' ? ' class="active" aria-current="page"' : ''}>Registro</a>
     </nav>
   </header>`;
 }
@@ -177,7 +177,7 @@ function getImagen(noticia) {
 function renderNoticiaCard(noticia) {
   return `
     <article class="news-card">
-      <a href="noticia.html?id=${noticia.id}" class="news-card-link" aria-label="Leer: ${noticia.titulo}">
+      <a href="/html/noticia.html?id=${noticia.id}" class="news-card-link" aria-label="Leer: ${noticia.titulo}">
         <div class="news-img">${getImagen(noticia)}</div>
         <div class="news-content">
           <span class="news-tag">${noticia.tag}</span>
@@ -194,7 +194,7 @@ function renderNoticiaCard(noticia) {
 
 function renderReportesCard(noticia) {
   return `
-    <a href="noticia.html?id=${noticia.id}" class="card card-link">
+    <a href="/html/noticia.html?id=${noticia.id}" class="card card-link">
       <div class="card-badge">${noticia.tag}</div>
       <div class="card-villano">${getImagen(noticia)}</div>
       <h3>${noticia.titulo.split(':')[0]}</h3>
@@ -221,8 +221,8 @@ function setupBuscador(inputId, resultadosId, destino) {
 
   function ejecutar() {
     const termino = input.value;
-    if (destino === 'noticias.html') {
-      const url = 'noticias.html?q=' + encodeURIComponent(termino);
+    if (destino === '/html/noticias.html') {
+      const url = '/html/noticias.html?q=' + encodeURIComponent(termino);
       window.location.href = url;
     } else {
       mostrarResultados(termino);
