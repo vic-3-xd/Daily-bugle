@@ -122,6 +122,18 @@ const NOTICIAS = [
     keywords: ['mysterio', 'beck', 'times square', 'ilusiones', 'caos']
   },
   {
+    id: 'kraven-caza-spider',
+    tag: 'Peligro Extremo',
+    img: '/img/Kraven.jpg',
+    svg: null,
+    titulo: 'Kraven el Cazador llega a Nueva York: Spider-Man es su presa',
+    resumen: 'Sergei Kravinoff, el legendario cazador, ha sido visto en Manhattan preparando una cacería. Su objetivo: Spider-Man.',
+    contenido: 'Sergei Kravinoff, conocido mundialmente como Kraven el Cazador, ha sido avistado en los distritos más oscuros de Nueva York. El aristócrata ruso, obsesionado con demostrar su superioridad sobre las presas más peligrosas del mundo, ha puesto su mirada en el lanzarredes de la ciudad. "No es como los demás", declaró Kravinoff a un periodista que logró entrevistarlo brevemente. "Spider-Man es la presa definitiva. Rápido, ágil, inteligente. Cazarlo será mi mayor trofeo". Fuentes policiales confirmaron que Kravinoff ingresó al país con un arsenal de armas de caza exóticas y ha sido visto en los tejados de la ciudad realizando reconocimientos. Spider-Man, consultado por el Bugle, respondió con su característico humor: "Un tipo con una lanza y un chaleco de león quiere atraparme. Que haga fila".',
+    fecha: '13 Junio 2026',
+    autor: 'Ben Urich',
+    keywords: ['kraven', 'kravinoff', 'cazador', 'spiderman', 'caceria']
+  },
+  {
     id: 'daredevil-punisher',
     tag: 'EXCLUSIVA',
     img: '/img/daredevilypunisher.jpg',
