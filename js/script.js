@@ -16,7 +16,7 @@ const NOTICIAS = [
   {
     id: 'buitre-fuga-aire',
     tag: 'Alerta',
-    img: '../img/Spiderman 2.jpeg',
+    img: '../img/El buitre.avif',
     svg: null,
     titulo: 'El Buitre sobrevuela Manhattan: Toomes planea su golpe más grande',
     resumen: 'Adrian Toomes fue avistado sobrevolando la ciudad en un nuevo traje alado. Las autoridades temen que prepare un ataque coordinado contra la ciudad.',
