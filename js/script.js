@@ -110,6 +110,18 @@ const NOTICIAS = [
     keywords: ['escorpion', 'gargan', 'jameson', 'controversia']
   },
   {
+    id: 'mysterio-ataque-quintuple',
+    tag: 'EXCLUSIVA',
+    img: '../img/Mysterio.jpg',
+    svg: null,
+    titulo: 'Mysterio desata el caos: Ilusiones masivas aterrorizan Times Square',
+    resumen: 'Quentin Beck, conocido como Mysterio, sumió Times Square en una pesadilla de ilusiones. Spider-Man lucha por distinguir la realidad del engaño.',
+    contenido: 'Anoche, Times Square se convirtió en el escenario de un espectáculo aterrador cuando Quentin Beck, el criminal conocido como Mysterio, desató una serie de ilusiones masivas que paralizaron el corazón de Manhattan. Los transeúntes reportaron haber visto criaturas monstruosas surgiendo de los carteles publicitarios, el suelo abriéndose en grietas de fuego y una réplica gigante de Spider-Man atacando a la multitud. "No sabíamos qué era real", declaró un testigo. Beck, un exespecialista en efectos especiales de Hollywood, utilizó una combinación de drones, proyecciones holográficas y gas alucinógeno para crear el caos. Spider-Man llegó al lugar pero fue visto forcejeando con ilusiones, golpeando el aire y a transeúntes desprevenidos. "El lanzarredes está perdiendo el juicio", comentó J. Jonah Jameson desde la redacción del Bugle.',
+    fecha: '12 Junio 2026',
+    autor: 'Robbie Robertson',
+    keywords: ['mysterio', 'beck', 'times square', 'ilusiones', 'caos']
+  },
+  {
     id: 'daredevil-punisher',
     tag: 'EXCLUSIVA',
     img: '../img/daredevilypunisher.jpg',
