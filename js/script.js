@@ -4,7 +4,7 @@ const NOTICIAS = [
   {
     id: 'spiderman-vs-buitre',
     tag: 'EXCLUSIVA',
-    img: '../img/Spiderman 2.jpeg',
+    img: '/img/Spiderman 2.jpeg',
     svg: null,
     titulo: 'Spider-Man detiene un robo en el Midtown Bank',
     resumen: 'El lanzarredes frustró un asalto perpetrado por el Buitre. Testigos afirman que el héroe apareció de la nada y ató al villano con telarañas.',
@@ -16,7 +16,7 @@ const NOTICIAS = [
   {
     id: 'buitre-fuga-aire',
     tag: 'Alerta',
-    img: '../img/El buitre.avif',
+    img: '/img/El buitre.avif',
     svg: null,
     titulo: 'El Buitre sobrevuela Manhattan: Toomes planea su golpe más grande',
     resumen: 'Adrian Toomes fue avistado sobrevolando la ciudad en un nuevo traje alado. Las autoridades temen que prepare un ataque coordinado contra la ciudad.',
@@ -28,7 +28,7 @@ const NOTICIAS = [
   {
     id: 'duende-verde-brooklyn',
     tag: 'Alerta',
-    img: '../img/Duende verde.jpg',
+    img: '/img/Duende verde.jpg',
     svg: null,
     titulo: 'Duende Verde ataca el puente de Brooklyn',
     resumen: 'Norman Osborn, en su identidad criminal, lanzó bombas de calabaza desde su planeador. El puente permanece cerrado.',
@@ -40,7 +40,7 @@ const NOTICIAS = [
   {
     id: 'venom-amenaza',
     tag: 'Peligro Extremo',
-    img: '../img/Venom.jpg',
+    img: '/img/Venom.jpg',
     svg: null,
     titulo: 'Venom amenaza con destruir la ciudad',
     resumen: 'El simbionte, ahora en un nuevo huésped, promete "limpiar" Nueva York de criminales. Las autoridades están en alerta máxima.',
@@ -52,7 +52,7 @@ const NOTICIAS = [
   {
     id: 'doc-ock-escapa',
     tag: 'Se Busca',
-    img: '../img/Doctor octopus.avif',
+    img: '/img/Doctor octopus.avif',
     svg: null,
     titulo: 'Doctor Octopus: Fuga del penal de Ryker',
     resumen: 'Otto Octavius escapó usando sus brazos mecánicos. La policía cree que buscará reunirse con los Seis Siniestros.',
@@ -64,7 +64,7 @@ const NOTICIAS = [
   {
     id: 'hombre-arena-robo',
     tag: 'Robo',
-    img: '../img/Hombre de arena.avif',
+    img: '/img/Hombre de arena.avif',
     svg: null,
     titulo: 'Hombre de Arena asalta joyería en el centro',
     resumen: 'Flint Marko transformó su cuerpo en arena para penetrar la bóveda. Se estima un botín de 2 millones de dólares.',
@@ -76,7 +76,7 @@ const NOTICIAS = [
   {
     id: 'lagarto-alcantarillas',
     tag: 'Ciencia',
-    img: '../img/Lagarto.avif',
+    img: '/img/Lagarto.avif',
     svg: null,
     titulo: 'El Lagarto: Una amenaza en las alcantarillas',
     resumen: 'El Dr. Curt Connors, transformado en Lagarto, ha establecido un nido en el sistema de alcantarillado. Spider-Man fue visto entrando a buscarlo.',
@@ -88,7 +88,7 @@ const NOTICIAS = [
   {
     id: 'electro-apagon',
     tag: 'Electrocutado',
-    img: '../img/Electro.jpg',
+    img: '/img/Electro.jpg',
     svg: null,
     titulo: 'Electro causa apagón en Manhattan',
     resumen: 'Max Dillon, convertido en Electro, sobrecargó la red eléctrica. Miles de personas quedaron sin luz por varias horas.',
@@ -100,7 +100,7 @@ const NOTICIAS = [
   {
     id: 'escorpion-jameson',
     tag: 'Controversia',
-    img: '../img/Scorpion.jpg',
+    img: '/img/Scorpion.jpg',
     svg: null,
     titulo: 'Escorpión: ¿Creación de Jameson?',
     resumen: 'Nuevas pruebas sugieren que Mac Gargan, el Escorpión, fue creado con fondos del Daily Bugle para desenmascarar a Spider-Man.',
@@ -112,7 +112,7 @@ const NOTICIAS = [
   {
     id: 'mysterio-ataque-quintuple',
     tag: 'EXCLUSIVA',
-    img: '../img/Mysterio.jpg',
+    img: '/img/Mysterio.jpg',
     svg: null,
     titulo: 'Mysterio desata el caos: Ilusiones masivas aterrorizan Times Square',
     resumen: 'Quentin Beck, conocido como Mysterio, sumió Times Square en una pesadilla de ilusiones. Spider-Man lucha por distinguir la realidad del engaño.',
@@ -124,7 +124,7 @@ const NOTICIAS = [
   {
     id: 'daredevil-punisher',
     tag: 'EXCLUSIVA',
-    img: '../img/daredevilypunisher.jpg',
+    img: '/img/daredevilypunisher.jpg',
     svg: null,
     titulo: 'Daredevil y Punisher: Alianza inesperada en los muelles',
     resumen: 'El Diablo de Hell\'s Kitchen y el justiciero Frank Castle fueron vistos combatiendo juntos una red de tráfico de armas. Testigos describen una tregua violenta pero efectiva.',
@@ -152,7 +152,7 @@ function renderHeader(paginaActiva) {
     <div class="masthead">
       <div class="masthead-left">
         <a href="/index.html" aria-label="Ir al inicio" class="logo-link">
-          <img src="../img/logo.svg" alt="Daily Bugle Logo" class="logo-img">
+          <img src="/img/logo.svg" alt="Daily Bugle Logo" class="logo-img">
         </a>
         <div class="masthead-info">
           <p>Fundado en 1898</p>
