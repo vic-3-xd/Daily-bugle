@@ -14,6 +14,18 @@ const NOTICIAS = [
     keywords: ['spiderman', 'buitre', 'toomes', 'banco', 'robo']
   },
   {
+    id: 'buitre-fuga-aire',
+    tag: 'Alerta',
+    img: '../img/Spiderman 2.jpeg',
+    svg: null,
+    titulo: 'El Buitre sobrevuela Manhattan: Toomes planea su golpe más grande',
+    resumen: 'Adrian Toomes fue avistado sobrevolando la ciudad en un nuevo traje alado. Las autoridades temen que prepare un ataque coordinado contra la ciudad.',
+    contenido: 'Adrian Toomes, el criminal conocido como el Buitre, ha sido avistado en múltiples ocasiones durante las últimas 48 horas sobrevolando Manhattan a baja altura. Testigos lo describen portando un traje alado mejorado, con componentes tecnológicos que nunca antes se le habían visto. Fuentes del Departamento de Policía de Nueva York informaron que Toomes parece estar realizando reconocimientos aéreos de diversos puntos estratégicos de la ciudad, incluyendo el Banco de la Reserva Federal y varios museos de alto perfil. "Está planeando algo grande", declaró una fuente anónima. "Nunca lo habíamos visto tan metódico". Spider-Man habría sido visto siguiéndolo desde los tejados, aunque no se ha producido enfrentamiento directo.',
+    fecha: '11 Junio 2026',
+    autor: 'J. Jonah Jameson',
+    keywords: ['buitre', 'toomes', 'vuelo', 'manhattan', 'reconocimiento']
+  },
+  {
     id: 'duende-verde-brooklyn',
     tag: 'Alerta',
     img: '../img/Duende verde.jpg',
